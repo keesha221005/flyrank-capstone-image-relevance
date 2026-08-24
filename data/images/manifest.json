@@ -1,0 +1,352 @@
+[
+  {
+    "filename": "fox_01.jpg",
+    "label": "fox",
+    "pexels_id": 8650973,
+    "photographer": "Brett Jordan",
+    "pexels_url": "https://www.pexels.com/photo/brown-fox-lying-on-green-grass-8650973/"
+  },
+  {
+    "filename": "fox_02.jpg",
+    "label": "fox",
+    "pexels_id": 13533977,
+    "photographer": "Brett Jordan",
+    "pexels_url": "https://www.pexels.com/photo/fox-on-a-field-13533977/"
+  },
+  {
+    "filename": "fox_03.jpg",
+    "label": "fox",
+    "pexels_id": 17093663,
+    "photographer": "Abdullah Dawud",
+    "pexels_url": "https://www.pexels.com/photo/wild-fox-sitting-on-green-grass-17093663/"
+  },
+  {
+    "filename": "fox_04.jpg",
+    "label": "fox",
+    "pexels_id": 23914490,
+    "photographer": "Tomáš Malík",
+    "pexels_url": "https://www.pexels.com/photo/a-fox-sitting-outdoors-23914490/"
+  },
+  {
+    "filename": "fox_05.jpg",
+    "label": "fox",
+    "pexels_id": 19983817,
+    "photographer": "Niklas Lang",
+    "pexels_url": "https://www.pexels.com/photo/fox-lie-on-cold-ground-in-winter-19983817/"
+  },
+  {
+    "filename": "fox_06.jpg",
+    "label": "fox",
+    "pexels_id": 26970106,
+    "photographer": "Radik 2707",
+    "pexels_url": "https://www.pexels.com/photo/red-fox-sitting-on-the-steps-26970106/"
+  },
+  {
+    "filename": "fox_07.jpg",
+    "label": "fox",
+    "pexels_id": 27114106,
+    "photographer": "Brett Jordan",
+    "pexels_url": "https://www.pexels.com/photo/foxes-lying-down-at-field-27114106/"
+  },
+  {
+    "filename": "fox_08.jpg",
+    "label": "fox",
+    "pexels_id": 36699093,
+    "photographer": "patrice schoefolt",
+    "pexels_url": "https://www.pexels.com/photo/close-up-of-a-resting-red-fox-in-straw-36699093/"
+  },
+  {
+    "filename": "fox_09.jpg",
+    "label": "fox",
+    "pexels_id": 27114105,
+    "photographer": "Brett Jordan",
+    "pexels_url": "https://www.pexels.com/photo/two-jackals-lying-in-grass-27114105/"
+  },
+  {
+    "filename": "fox_10.jpg",
+    "label": "fox",
+    "pexels_id": 27046675,
+    "photographer": "M.Emin  BİLİR",
+    "pexels_url": "https://www.pexels.com/photo/sitting-red-fox-baring-its-fangs-27046675/"
+  },
+  {
+    "filename": "wolf_01.jpg",
+    "label": "wolf",
+    "pexels_id": 12960017,
+    "photographer": "patrice schoefolt",
+    "pexels_url": "https://www.pexels.com/photo/photo-of-a-wolfdog-12960017/"
+  },
+  {
+    "filename": "wolf_02.jpg",
+    "label": "wolf",
+    "pexels_id": 29448267,
+    "photographer": "Omar Ramadan",
+    "pexels_url": "https://www.pexels.com/photo/wild-wolf-carrying-prey-in-forest-setting-29448267/"
+  },
+  {
+    "filename": "wolf_03.jpg",
+    "label": "wolf",
+    "pexels_id": 28541402,
+    "photographer": "Andreas Schnabl",
+    "pexels_url": "https://www.pexels.com/photo/close-up-of-a-gray-wolf-in-natural-habitat-28541402/"
+  },
+  {
+    "filename": "wolf_04.jpg",
+    "label": "wolf",
+    "pexels_id": 31767241,
+    "photographer": "Daniel Lengies",
+    "pexels_url": "https://www.pexels.com/photo/gray-wolf-in-forest-clearing-during-daytime-31767241/"
+  },
+  {
+    "filename": "wolf_05.jpg",
+    "label": "wolf",
+    "pexels_id": 33091531,
+    "photographer": "patrice schoefolt",
+    "pexels_url": "https://www.pexels.com/photo/majestic-grey-wolf-in-natural-habitat-33091531/"
+  },
+  {
+    "filename": "wolf_06.jpg",
+    "label": "wolf",
+    "pexels_id": 21655742,
+    "photographer": "patrice schoefolt",
+    "pexels_url": "https://www.pexels.com/photo/portrait-of-a-wolf-21655742/"
+  },
+  {
+    "filename": "wolf_07.jpg",
+    "label": "wolf",
+    "pexels_id": 36169697,
+    "photographer": "Jack Borno",
+    "pexels_url": "https://www.pexels.com/photo/gray-wolf-walking-in-natural-habitat-36169697/"
+  },
+  {
+    "filename": "wolf_08.jpg",
+    "label": "wolf",
+    "pexels_id": 7402790,
+    "photographer": "patrice schoefolt",
+    "pexels_url": "https://www.pexels.com/photo/a-wolf-on-the-grass-7402790/"
+  },
+  {
+    "filename": "wolf_09.jpg",
+    "label": "wolf",
+    "pexels_id": 12428924,
+    "photographer": "patrice schoefolt",
+    "pexels_url": "https://www.pexels.com/photo/close-up-of-a-wolf-12428924/"
+  },
+  {
+    "filename": "wolf_10.jpg",
+    "label": "wolf",
+    "pexels_id": 7403461,
+    "photographer": "patrice schoefolt",
+    "pexels_url": "https://www.pexels.com/photo/a-gray-wolf-in-the-wild-7403461/"
+  },
+  {
+    "filename": "dog_01.jpg",
+    "label": "dog",
+    "pexels_id": 20047090,
+    "photographer": "Nothing Ahead",
+    "pexels_url": "https://www.pexels.com/photo/a-dog-in-grass-20047090/"
+  },
+  {
+    "filename": "dog_02.jpg",
+    "label": "dog",
+    "pexels_id": 19202649,
+    "photographer": "Andreas Schnabl",
+    "pexels_url": "https://www.pexels.com/photo/spinone-italiano-dog-on-mountain-19202649/"
+  },
+  {
+    "filename": "dog_03.jpg",
+    "label": "dog",
+    "pexels_id": 923901,
+    "photographer": "Arjun Pv",
+    "pexels_url": "https://www.pexels.com/photo/adult-short-coat-brown-dog-923901/"
+  },
+  {
+    "filename": "dog_04.jpg",
+    "label": "dog",
+    "pexels_id": 33205883,
+    "photographer": "hasbi habibi",
+    "pexels_url": "https://www.pexels.com/photo/cute-puppy-standing-on-volcanic-rocks-in-bali-33205883/"
+  },
+  {
+    "filename": "dog_05.jpg",
+    "label": "dog",
+    "pexels_id": 37903744,
+    "photographer": "Andreas Schnabl",
+    "pexels_url": "https://www.pexels.com/photo/playful-dogs-enjoying-an-outdoor-adventure-37903744/"
+  },
+  {
+    "filename": "dog_06.jpg",
+    "label": "dog",
+    "pexels_id": 35285315,
+    "photographer": "Magda Ehlers",
+    "pexels_url": "https://www.pexels.com/photo/close-up-of-a-border-collie-in-a-garden-35285315/"
+  },
+  {
+    "filename": "dog_07.jpg",
+    "label": "dog",
+    "pexels_id": 13925383,
+    "photographer": "Nothing Ahead",
+    "pexels_url": "https://www.pexels.com/photo/the-white-and-brown-dog-sticking-out-a-tongue-13925383/"
+  },
+  {
+    "filename": "dog_08.jpg",
+    "label": "dog",
+    "pexels_id": 11512047,
+    "photographer": "gabesdotphotos photographer",
+    "pexels_url": "https://www.pexels.com/photo/dogs-on-riverbank-11512047/"
+  },
+  {
+    "filename": "dog_09.jpg",
+    "label": "dog",
+    "pexels_id": 33646281,
+    "photographer": "Tommes Frites",
+    "pexels_url": "https://www.pexels.com/photo/golden-retriever-posing-with-bavarian-alps-33646281/"
+  },
+  {
+    "filename": "dog_10.jpg",
+    "label": "dog",
+    "pexels_id": 36587699,
+    "photographer": "Chris F",
+    "pexels_url": "https://www.pexels.com/photo/white-terrier-mix-dog-in-outdoor-field-36587699/"
+  },
+  {
+    "filename": "bear_01.jpg",
+    "label": "bear",
+    "pexels_id": 18453573,
+    "photographer": "Oliver  Morgan Media",
+    "pexels_url": "https://www.pexels.com/photo/bears-batching-in-a-river-18453573/"
+  },
+  {
+    "filename": "bear_02.jpg",
+    "label": "bear",
+    "pexels_id": 38965576,
+    "photographer": "Michal Petráš",
+    "pexels_url": "https://www.pexels.com/photo/majestic-european-brown-bear-in-slovak-wilderness-38965576/"
+  },
+  {
+    "filename": "bear_03.jpg",
+    "label": "bear",
+    "pexels_id": 3048718,
+    "photographer": "Vincent M.A. Janssen",
+    "pexels_url": "https://www.pexels.com/photo/brown-bear-3048718/"
+  },
+  {
+    "filename": "bear_04.jpg",
+    "label": "bear",
+    "pexels_id": 19140962,
+    "photographer": "Carlos Mazorra",
+    "pexels_url": "https://www.pexels.com/photo/bears-on-a-hill-19140962/"
+  },
+  {
+    "filename": "bear_05.jpg",
+    "label": "bear",
+    "pexels_id": 38965587,
+    "photographer": "Michal Petráš",
+    "pexels_url": "https://www.pexels.com/photo/european-brown-bear-in-natural-habitat-38965587/"
+  },
+  {
+    "filename": "bear_06.jpg",
+    "label": "bear",
+    "pexels_id": 26800282,
+    "photographer": "Ali Kazal",
+    "pexels_url": "https://www.pexels.com/photo/bear-lying-down-on-ground-26800282/"
+  },
+  {
+    "filename": "bear_07.jpg",
+    "label": "bear",
+    "pexels_id": 14431197,
+    "photographer": "Nicky Pe",
+    "pexels_url": "https://www.pexels.com/photo/close-up-photo-of-a-grizzly-bear-14431197/"
+  },
+  {
+    "filename": "bear_08.jpg",
+    "label": "bear",
+    "pexels_id": 7266172,
+    "photographer": "Alexas Fotos",
+    "pexels_url": "https://www.pexels.com/photo/brown-bears-playing-on-the-lake-7266172/"
+  },
+  {
+    "filename": "bear_09.jpg",
+    "label": "bear",
+    "pexels_id": 34799366,
+    "photographer": "Emrecan Dora",
+    "pexels_url": "https://www.pexels.com/photo/brown-bear-submerged-in-water-looking-curious-34799366/"
+  },
+  {
+    "filename": "bear_10.jpg",
+    "label": "bear",
+    "pexels_id": 10172222,
+    "photographer": "Ferencz Istvan",
+    "pexels_url": "https://www.pexels.com/photo/brown-bear-lying-on-dry-leaves-10172222/"
+  },
+  {
+    "filename": "deer_01.jpg",
+    "label": "deer",
+    "pexels_id": 33287267,
+    "photographer": "Haberdoedas Photography",
+    "pexels_url": "https://www.pexels.com/photo/red-deer-in-a-dense-forest-landscape-33287267/"
+  },
+  {
+    "filename": "deer_02.jpg",
+    "label": "deer",
+    "pexels_id": 18291217,
+    "photographer": "Miguel Cuenca",
+    "pexels_url": "https://www.pexels.com/photo/young-red-deer-18291217/"
+  },
+  {
+    "filename": "deer_03.jpg",
+    "label": "deer",
+    "pexels_id": 6679135,
+    "photographer": "Whicdhemein One",
+    "pexels_url": "https://www.pexels.com/photo/animals-and-trees-in-the-woods-6679135/"
+  },
+  {
+    "filename": "deer_04.jpg",
+    "label": "deer",
+    "pexels_id": 4654632,
+    "photographer": "Gantas Vaičiulėnas",
+    "pexels_url": "https://www.pexels.com/photo/brown-deer-on-green-grass-field-4654632/"
+  },
+  {
+    "filename": "deer_05.jpg",
+    "label": "deer",
+    "pexels_id": 4654634,
+    "photographer": "Gantas Vaičiulėnas",
+    "pexels_url": "https://www.pexels.com/photo/brown-deer-on-green-grass-field-4654634/"
+  },
+  {
+    "filename": "deer_06.jpg",
+    "label": "deer",
+    "pexels_id": 6577370,
+    "photographer": "Aferali",
+    "pexels_url": "https://www.pexels.com/photo/a-roe-deer-in-an-autumn-forest-6577370/"
+  },
+  {
+    "filename": "deer_07.jpg",
+    "label": "deer",
+    "pexels_id": 7037046,
+    "photographer": "Nicolas Rousseau",
+    "pexels_url": "https://www.pexels.com/photo/a-herd-of-red-deers-in-the-forest-7037046/"
+  },
+  {
+    "filename": "deer_08.jpg",
+    "label": "deer",
+    "pexels_id": 37284372,
+    "photographer": "Timo Volz",
+    "pexels_url": "https://www.pexels.com/photo/young-deer-in-sunlit-forest-clearing-37284372/"
+  },
+  {
+    "filename": "deer_09.jpg",
+    "label": "deer",
+    "pexels_id": 4463129,
+    "photographer": "Abi Mauludhi",
+    "pexels_url": "https://www.pexels.com/photo/brown-deer-on-brown-field-4463129/"
+  },
+  {
+    "filename": "deer_10.jpg",
+    "label": "deer",
+    "pexels_id": 831244,
+    "photographer": "Syed Hasan Mehdi",
+    "pexels_url": "https://www.pexels.com/photo/wildlife-photography-of-herd-of-gazelle-831244/"
+  }
+]

@@ -52,3 +52,4 @@ This system does not implement user authentication, multi-tenant support, or a p
 ## Stack
 
 Node.js + Express v5, PostgreSQL (local), Gemini Flash (vision + embeddings, free tier), Zod for schema validation, `dotenv` for config.
+
