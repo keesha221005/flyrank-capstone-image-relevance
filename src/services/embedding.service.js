@@ -14,7 +14,9 @@ async function embedText(text) {
 
   return {
     embedding: response.embeddings[0].values,
-    usage: response.usageMetadata,
+    // Embedding responses don't return usageMetadata the same way generateContent does —
+    // approximate token count from input length as a reasonable estimate (~4 chars/token).
+    estimatedTokens: Math.ceil(text.length / 4),
   };
 }
 
