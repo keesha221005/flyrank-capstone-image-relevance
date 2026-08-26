@@ -43,6 +43,16 @@ Vision calls return exact `usageMetadata` token counts from Gemini. Embedding ca
 
 15 automated tests written using Node's built-in test runner (zero new dependencies) covering schema validation, guard decision logic, and matching math. The most important test explicitly proves the guard's core safety property: a wolf candidate is rejected on subject mismatch *even when its similarity score is deliberately set to 0.95* (higher than a real fox would likely score) — confirming the subject check is a hard override, not just one input among several that could be outweighed by a strong similarity score.
 
+## Phase 4 — Eval set
+
+### A real pipeline sync bug, found by the eval run itself
+The first eval run scored 50% (2/4) with fox and dog posts both returning "no confident match" — looked like a guard or threshold problem at first glance. Investigation showed the real cause: `getAllImagesWithEmbeddings()` filters to `WHERE embedding IS NOT NULL`, and the fox/dog images tagged on day 2 of vision ingestion had never been run through `embedImages.job.js` — the two batch jobs (vision tagging, embedding enrichment) aren't automatically chained, so newly-tagged images silently don't participate in matching until someone remembers to re-run the embedding job. Re-running `embedImages.job.js` (itself resumable, only processes `embedding IS NULL` rows) fixed it immediately — precision jumped to 75% (3/4).
+
+**This is a real operational gap worth fixing properly**: for now it's documented here and in the README as a manual two-step process, but a more robust design would have `ingestImages.job.js` trigger embedding for each image right after tagging it, so the two data points can never drift out of sync. Left as a known follow-up rather than a hidden gap.
+
+### A real threshold-tuning finding: dog post rejected on similarity, not subject
+With embeddings fixed, the "loyal companionship of dogs" post still scored below the 0.80 similarity threshold (0.77–0.79 across all dog images) despite every candidate being correctly subject-matched with high confidence. Investigating the actual failure mode (not just accepting "no confident match" at face value) showed this is likely a **post-writing-style effect, not a bug**: the eval post is thematic/abstract ("loyal companionship... trainability... breeds suited to different roles") rather than a literal visual description, so it embeds further from a literal image caption than a more descriptive post would. This is a genuine, demo-worthy finding about the interaction between post-writing style and embedding-based matching — not something to quietly raise the threshold to paper over without understanding it first.
+
 ---
 
 ## Summary of real constraints encountered (not hidden)

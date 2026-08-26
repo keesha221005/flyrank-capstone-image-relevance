@@ -10,7 +10,7 @@ async function createPost({ title, body, expected_subject }) {
   const res = await pool.query(
     `INSERT INTO posts (title, body, expected_subject, embedding)
      VALUES ($1, $2, $3, $4)
-     RETURNING id, title, body, expected_subject, created_at`,
+     RETURNING id, title, body, expected_subject, embedding, created_at`,
     [title, body, expected_subject, embedding]
   );
 
