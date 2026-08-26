@@ -111,8 +111,34 @@ Every rejected candidate in the deer/bear and fox/wolf tests above includes a sp
 ### ⏳ API endpoints validated; the review workflow (approve/reject/inspect why) exists.
 `POST /api/posts`, `GET /api/posts/:id/images`, `GET /api/images`, `POST /api/images/ingest`, `POST /api/reviews`, `GET /api/reviews`, `GET /api/costs` all implemented with Zod validation on write endpoints. Review workflow (`POST /api/reviews`) not yet exercised against a real `suggestion_id` — pending next test.
 
-### ⏳ Automated tests cover schema validation, mismatch rejection, and matching accuracy.
-Not yet started.
+### ✅ Automated tests cover schema validation, mismatch rejection, and matching accuracy.
+`test/` — 15 tests using Node's built-in test runner (`node --test`), zero dependencies added. Covers all three required areas:
+- **Schema validation** (`imageMetadata.schema.test.js`): valid object passes, invalid category/confidence-out-of-range/too-many-attributes/short-caption all correctly rejected.
+- **Mismatch rejection** (`guard.service.test.js`): includes the core safety-critical case — the guard rejects a wolf candidate on subject mismatch *even when similarity is deliberately set to 0.95*, proving the tag-level check overrides similarity rather than just adding to it. Also covers low-confidence rejection, low-similarity rejection, and case-insensitive/substring-tolerant subject matching.
+- **Matching accuracy** (`matching.service.test.js`): cosine similarity correctness (identical → 1, orthogonal → 0, opposite → -1, dimension mismatch → throws), and correct descending ranking order.
+
+All 15 passing:
+```
+✔ accepts when subject matches, confidence and similarity clear thresholds
+✔ rejects the wolf-on-fox-post scenario on subject mismatch, even with high similarity
+✔ rejects on low confidence even when subject matches
+✔ rejects on low similarity even when subject and confidence are fine
+✔ subject matching is case-insensitive and tolerant of substrings
+✔ accepts a valid image metadata object
+✔ rejects an invalid category
+✔ rejects confidence outside 0-1 range
+✔ rejects more than 8 attributes
+✔ rejects caption shorter than 10 characters
+✔ identical vectors have similarity of 1
+✔ orthogonal vectors have similarity of 0
+✔ opposite vectors have similarity of -1
+✔ throws on mismatched vector dimensions
+✔ ranks images by descending similarity to post embedding
+
+ℹ tests 15
+ℹ pass 15
+ℹ fail 0
+```
 
 ---
 
