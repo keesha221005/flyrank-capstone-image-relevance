@@ -17,6 +17,7 @@ const RESPONSE_SCHEMA = {
     attributes: {
       type: Type.ARRAY,
       items: { type: Type.STRING },
+      maxItems: 8,
     },
     caption: { type: Type.STRING },
     confidence: { type: Type.NUMBER },
