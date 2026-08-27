@@ -46,7 +46,7 @@ src/
 
 ## Setup
 
-Requires: Node.js 22+, PostgreSQL (local), a free Gemini API key (no card — [aistudio.google.com](https://aistudio.google.com/apikey)).
+Requires: Node.js 22+, PostgreSQL (local), a free Gemini API key (no card — [aistudio.google.com](https://aistudio.google.com/apikey)), and a free Pexels API key (no card — [pexels.com/api](https://www.pexels.com/api/)) if you want to re-download the image corpus.
 
 ```bash
 npm install
@@ -57,7 +57,7 @@ psql -U postgres -d image_relevance -f src/db/schema.sql
 
 # configure environment
 cp .env.example .env
-# fill in GEMINI_API_KEY and DATABASE_URL in .env
+# fill in GEMINI_API_KEY, DATABASE_URL, and PEXELS_API_KEY in .env
 ```
 
 ## Seed the corpus
@@ -68,7 +68,9 @@ node src/jobs/ingestImages.job.js  # tags images via Gemini vision — resumable
 node src/jobs/embedImages.job.js   # embeds captions for matching
 ```
 
-**Note on quota**: this project's free-tier Gemini account is capped at 20 requests/day for `gemini-2.5-flash`. `ingestImages.job.js` is resumable — re-run the same command daily until the corpus is fully tagged. See `BUILDLOG.md` for the full story.
+**Note on quota**: this project's free-tier Gemini account is capped at 20 requests/day for `gemini-2.5-flash`, and the quota resets on Pacific Time (not local time — worth checking [ai.dev/rate-limit](https://ai.dev/rate-limit) if a run stops early). `ingestImages.job.js` is resumable — re-run the same command daily until the corpus is fully tagged. The included corpus (50 images) took 3 daily runs to fully tag. See `BUILDLOG.md` for the full story.
+
+**Important**: after any ingestion run, also re-run `embedImages.job.js` — the two jobs aren't automatically chained, so newly-tagged images won't participate in matching until they're embedded too (a real bug found mid-build; see `BUILDLOG.md`).
 
 ## Run
 
@@ -102,6 +104,14 @@ npm test
 ```
 
 15 automated tests (Node's built-in test runner, no extra dependencies) covering schema validation, guard decision logic — including the core case: a wolf candidate is rejected on subject mismatch even when its similarity score is deliberately set higher than a real fox's — and matching math.
+
+## Eval results
+
+```bash
+node src/jobs/runEval.js
+```
+
+Top-1 precision on the full 50-image corpus: **80% (4/5)**. Full breakdown, including the one honestly-investigated miss, in `EVIDENCE.md`.
 
 ## API
 
