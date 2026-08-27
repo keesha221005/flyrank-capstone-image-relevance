@@ -1,0 +1,82 @@
+name: flyrank-capstone-image-relevance
+description: AI Image Understanding & Content Matching Engine — vision tagging, semantic matching, and a mismatch guard that refuses low-confidence suggestions.
+
+run: node src/app.js
+base_url: http://localhost:3000
+
+seed:
+  - node src/jobs/fetchCorpus.js       # downloads the 50-image corpus (requires PEXELS_API_KEY)
+  - node src/jobs/ingestImages.job.js  # tags images via Gemini vision (resumable; free tier is 20 req/day, may need multiple runs)
+  - node src/jobs/embedImages.job.js   # embeds captions for matching
+
+test: npm test
+
+endpoints:
+  - method: POST
+    path: /api/posts
+    description: Create a post (embeds on creation)
+    example_body:
+      title: "The behavior of red foxes"
+      body: "Red foxes are highly adaptable animals known for their cunning hunting strategies and distinctive orange coats."
+      expected_subject: "fox"
+
+  - method: GET
+    path: /api/posts/:id/images
+    description: Ranked, guarded image suggestions for a post — the core probe. Returns best_match, no_confident_match flag, and full candidate list with guard decisions and reasons.
+
+  - method: GET
+    path: /api/images
+    description: List all vision-tagged images
+
+  - method: POST
+    path: /api/images/ingest
+    description: Trigger the vision batch job in the background
+
+  - method: POST
+    path: /api/reviews
+    description: Approve or reject a suggestion
+    example_body:
+      suggestion_id: 1
+      decision: "approved"
+
+  - method: GET
+    path: /api/reviews
+    description: Review history, joined with the original suggestion and guard decision
+
+  - method: GET
+    path: /api/costs
+    description: Per-call-type (vision/embedding) cost log with token counts
+
+probes:
+  - name: "Batch tagging produces schema-valid, flagged-when-uncertain output"
+    steps:
+      - Run the ingestion job on the corpus
+      - Confirm every processed image has schema-valid tags in the images table
+      - Confirm flagged_low_confidence is set on any image below the confidence threshold
+
+  - name: "Fox post ranks fox images first"
+    steps:
+      - POST /api/posts with expected_subject "fox"
+      - GET /api/posts/:id/images
+      - Confirm best_match.subject contains "fox"
+
+  - name: "Wolf-on-fox-post is rejected with an explanation"
+    steps:
+      - Using the fox post above, inspect candidates for any wolf-tagged image
+      - Confirm decision is "rejected" and reason cites a subject mismatch
+
+  - name: "No confident match returns an honest refusal"
+    steps:
+      - Create a post whose expected_subject has no corresponding tagged images
+      - GET /api/posts/:id/images
+      - Confirm no_confident_match is true and best_match is null
+
+  - name: "Eval script reports top-1 precision"
+    steps:
+      - Run node src/jobs/runEval.js
+      - Confirm the printed precision matches the number recorded in README.md / EVIDENCE.md
+
+  - name: "Every AI call is cost-attributed"
+    steps:
+      - GET /api/costs
+      - Confirm both "vision" and "embedding" call_type rows are present with non-zero call_count
