@@ -49,9 +49,6 @@ async function main() {
     });
 
     console.log(`Top-1 precision: ${(precision * 100).toFixed(1)}% (${correct}/${EVAL_POSTS.length})`);
-    console.log('\nNote: wolf category not yet tagged (0/10) — the fox/wolf adversarial');
-    console.log('case is pending and excluded from this run. See BUILDLOG.md.');
-
     await pool.end();
 }
 

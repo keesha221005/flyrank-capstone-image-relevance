@@ -26,12 +26,11 @@ const EVAL_POSTS = [
   // PENDING — requires wolf images tagged (0/10 as of today).
   // This is the brief's signature adversarial case: does a wolf ever get
   // wrongly accepted for a fox post? Add once wolf data exists.
-  // {
-  //   title: 'The behavior of red foxes',
-  //   body: '...',
-  //   expected_subject: 'fox',
-  //   note: 'adversarial — checks wolf is never accepted here',
-  // },
+    {
+    title: 'The behavior of gray wolves',
+    body: 'Gray wolves are apex predators that live and hunt in coordinated packs. Canis lupus once ranged across most of North America and Eurasia.',
+    expected_subject: 'wolf',
+  },
 ];
 
 module.exports = { EVAL_POSTS };
